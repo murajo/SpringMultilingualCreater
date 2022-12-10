@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/layout}">
+
+<head>
+    <title th:text="#{title}"></title>
+    <script th:src="@{/js//springmc/translate.js}" defer></script>
+</head>
+
+<body>
+    <div layout:fragment="content">
+        <h1 th:text="#{translate.heading1}"></h1>
+        <p th:text="#{translate.description}"></p>
+
+        <span style="vertical-align: top;" th:text="#{translate.sourceLang}"></span>
+        <select name="test1" id="sourceLang" style="vertical-align: top;">
+            <option value="" selected th:text="#{languageAuto}"></option>
+            <option value="ja" th:text="#{languageJa}"></option>
+            <option value="en" th:text="#{languageEn}"></option>
+        </select>
+
+        <span style="vertical-align: top;" th:text="#{translate.targetLang}"></span>
+        <select name="test" id="targetLang" multiple size="3" style="vertical-align: top;">
+            <option value="ja" th:text="#{languageJa}"></option>
+            <option value="en" th:text="#{languageEn}"></option>
+            <option value="zh" th:text="#{languageZh}"></option>
+        </select>
+        <br>
+        <textarea id="targetText" style="width:70%; height:200px;" th:placeholder="#{translate.targetTextPlace}"></textarea>
+        <br>
+        <button id="btn-translate" type="button" th:text="#{translate.button}"></button>
+        <br>
+        <br>
+        <div id="result"></div>
+
+    </div>
+</body>
+
+</html>
